@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "dadjokesgeneratorfda94270_identitypool_fda94270",
+    "identityPoolName": "dadjokesgenerator61549683_identitypool_61549683",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "dadjokfda94270",
-    "userPoolName": "dadjokesgeneratorfda94270_userpool_fda94270",
+    "resourceNameTruncated": "dadjok61549683",
+    "userPoolName": "dadjokesgenerator61549683_userpool_61549683",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "dadjokfda94270_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "dadjok61549683_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "fda94270",
-    "resourceName": "dadjokesgeneratorfda94270",
+    "sharedId": "61549683",
+    "resourceName": "dadjokesgenerator61549683",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
     "triggers": {},

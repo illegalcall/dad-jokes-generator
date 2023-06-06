@@ -27,4 +27,3 @@ type JokeAppData
     createdAt: String!
     updatedAt: String!
   }
-

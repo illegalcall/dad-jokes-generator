@@ -232,6 +232,14 @@ export type DeleteJokeAppDataMutation = {
   } | null,
 };
 
+export type GenerateAJokeQueryVariables = {
+  input: string,
+};
+
+export type GenerateAJokeQuery = {
+  generateAJoke?: string | null,
+};
+
 export type GetJokeAppDataQueryVariables = {
   id: string,
 };
@@ -289,14 +297,6 @@ export type JokesQueryNameQuery = {
     } | null >,
     nextToken?: string | null,
   } | null,
-};
-
-export type GenerateAJokeQueryVariables = {
-  input: string,
-};
-
-export type GenerateAJokeQuery = {
-  generateAJoke?: string | null,
 };
 
 export type OnCreateJokeAppDataSubscriptionVariables = {

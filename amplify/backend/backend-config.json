@@ -6,16 +6,16 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "authenticationType": "AWS_IAM"
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2023-06-13T12:04:09.179Z",
+                "apiKeyExpirationDays": 7,
+                "description": "api key for dad jokes generator"
+              },
+              "authenticationType": "API_KEY"
             }
           ],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDate": "2023-06-13T06:28:03.730Z",
-              "apiKeyExpirationDays": 7,
-              "description": "api key for dad jokes generator"
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AWS_IAM"
           }
         }
       },
@@ -24,7 +24,7 @@
     }
   },
   "auth": {
-    "dadjokesgeneratorfda94270": {
+    "dadjokesgenerator61549683": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {

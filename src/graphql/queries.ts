@@ -2,6 +2,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const generateAJoke = /* GraphQL */ `
+  query GenerateAJoke($input: AWSJSON!) {
+    generateAJoke(input: $input)
+  }
+`;
 export const getJokeAppData = /* GraphQL */ `
   query GetJokeAppData($id: ID!) {
     getJokeAppData(id: $id) {
@@ -55,10 +60,5 @@ export const jokesQueryName = /* GraphQL */ `
       }
       nextToken
     }
-  }
-`;
-export const generateAJoke = /* GraphQL */ `
-  query GenerateAJoke($input: AWSJSON!) {
-    generateAJoke(input: $input)
   }
 `;

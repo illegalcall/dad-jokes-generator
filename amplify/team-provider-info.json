@@ -1,23 +1,23 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-dadjokesgenerator-dev-114355-authRole",
-      "UnauthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-114355-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-114355-authRole",
-      "Region": "ap-south-1",
-      "DeploymentBucketName": "amplify-dadjokesgenerator-dev-114355-deployment",
-      "UnauthRoleName": "amplify-dadjokesgenerator-dev-114355-unauthRole",
-      "StackName": "amplify-dadjokesgenerator-dev-114355",
-      "StackId": "arn:aws:cloudformation:ap-south-1:990814142380:stack/amplify-dadjokesgenerator-dev-114355/521301b0-0431-11ee-b88a-069760dee42a",
-      "AmplifyAppId": "d3qzfodvzxn36v"
+      "AuthRoleName": "amplify-dadjokesgenerator-dev-171811-authRole",
+      "UnauthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-171811-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-171811-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dadjokesgenerator-dev-171811-deployment",
+      "UnauthRoleName": "amplify-dadjokesgenerator-dev-171811-unauthRole",
+      "StackName": "amplify-dadjokesgenerator-dev-171811",
+      "StackId": "arn:aws:cloudformation:us-east-1:990814142380:stack/amplify-dadjokesgenerator-dev-171811/06626fb0-0460-11ee-864a-12cfb1abe0af",
+      "AmplifyAppId": "d32p8zhaaofoa2"
     },
     "categories": {
       "auth": {
-        "dadjokesgeneratorfda94270": {}
+        "dadjokesgenerator61549683": {}
       },
       "function": {
         "dadjokeLambda": {
-          "deploymentBucketName": "amplify-dadjokesgenerator-dev-114355-deployment",
+          "deploymentBucketName": "amplify-dadjokesgenerator-dev-171811-deployment",
           "s3Key": "amplify-builds/dadjokeLambda-463747593469504c3856-build.zip"
         }
       },

@@ -4,14 +4,14 @@
     "apiName": "dadjokesgenerator",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7,
-      "apiKeyExpirationDate": "2023-06-13T06:28:03.730Z",
-      "keyDescription": "api key for dad jokes generator"
+      "mode": "AWS_IAM"
     },
     "additionalAuthTypes": [
       {
-        "mode": "AWS_IAM"
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2023-06-13T12:04:09.179Z",
+        "keyDescription": "api key for dad jokes generator"
       }
     ]
   }

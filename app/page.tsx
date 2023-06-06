@@ -16,10 +16,89 @@ import {
 	JokeGeneratorTitle,
 	RedSpan,
 } from './components/JokeGenerator/JokeGeneratorElements';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
+import { jokesQueryName } from '@/src/graphql/queries';
+
+// AWS imports
+import { Amplify } from 'aws-amplify';
+import awsExports from '../src/aws-exports';
+
+Amplify.configure({ ...awsExports, ssr: true });
+
+// interface for our appsync <> lambda JSON response
+interface GenerateAJokeData {
+	generateAJoke: {
+		statusCode: number;
+		headers: { [key: string]: string };
+		body: string;
+	};
+}
+
+// interface for our DynamoDB object
+interface UpdateJokeInfoData {
+	id: string;
+	queryName: string;
+	jokesGenerated: number;
+	createdAt: string;
+	updatedAt: string;
+}
+
+// type guard for our fetch function
+// function isGraphQLResultForjokesQueryName(
+// 	response: any
+// ): response is GraphQLResult<{
+// 	jokesQueryName: {
+// 		items: [UpdateJokeInfoData];
+// 	};
+// }> {
+// 	return (
+// 		response.data &&
+// 		response.data.jokesQueryName &&
+// 		response.data.jokesQueryName.items
+// 	);
+// }
 
 export default function Home() {
 	const [numberOfJokes, setNumberOfJokes] = useState(0);
+
+	// Function to fetch our DynamoDB object (jokes generated)
+	const updateJokeInfo = async () => {
+		try {
+			const response =
+				(await API.graphql<UpdateJokeInfoData>({
+					query: jokesQueryName,
+					authMode: 'AWS_IAM',
+					variables: {
+						queryName: 'LIVE',
+					},
+				})) as any;
+			console.log('response', response);
+			// setNumberOfJokes();
+
+			// Create type guards
+			// if (!isGraphQLResultForjokesQueryName(response)) {
+			// 	throw new Error(
+			// 		'Unexpected response from API.graphql'
+			// 	);
+			// }
+
+			if (!response.data) {
+				throw new Error('Response data is undefined');
+			}
+
+			const receivedNumberOfJokes =
+				response.data.jokesQueryName.items[0]
+					.jokesGenerated;
+			setNumberOfJokes(receivedNumberOfJokes);
+		} catch (error) {
+			console.log('error getting joke data', error);
+		}
+	};
+
+	useEffect(() => {
+		updateJokeInfo();
+	}, []);
 
 	return (
 		<main className={styles.main}>
