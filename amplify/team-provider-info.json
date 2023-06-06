@@ -18,11 +18,17 @@
       "function": {
         "dadjokeLambda": {
           "deploymentBucketName": "amplify-dadjokesgenerator-dev-171811-deployment",
-          "s3Key": "amplify-builds/dadjokeLambda-39527137365233775955-build.zip"
+          "s3Key": "amplify-builds/dadjokeLambda-7169716a4675554b504b-build.zip"
         }
       },
       "api": {
         "dadjokesgenerator": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d32p8zhaaofoa2",
+          "type": "cicd"
+        }
       }
     }
   }
