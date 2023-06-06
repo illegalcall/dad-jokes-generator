@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dadjokesgenerator-dev-114355-authRole",
+      "UnauthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-114355-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::990814142380:role/amplify-dadjokesgenerator-dev-114355-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-dadjokesgenerator-dev-114355-deployment",
+      "UnauthRoleName": "amplify-dadjokesgenerator-dev-114355-unauthRole",
+      "StackName": "amplify-dadjokesgenerator-dev-114355",
+      "StackId": "arn:aws:cloudformation:ap-south-1:990814142380:stack/amplify-dadjokesgenerator-dev-114355/521301b0-0431-11ee-b88a-069760dee42a",
+      "AmplifyAppId": "d3qzfodvzxn36v"
+    },
+    "categories": {
+      "auth": {
+        "dadjokesgeneratorfda94270": {}
+      },
+      "function": {
+        "dadjokeLambda": {
+          "deploymentBucketName": "amplify-dadjokesgenerator-dev-114355-deployment",
+          "s3Key": "amplify-builds/dadjokeLambda-463747593469504c3856-build.zip"
+        }
+      },
+      "api": {
+        "dadjokesgenerator": {}
+      }
+    }
+  }
+}
