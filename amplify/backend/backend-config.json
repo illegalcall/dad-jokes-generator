@@ -52,6 +52,15 @@
   "function": {
     "dadjokeLambda": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "dadjokesgenerator"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }

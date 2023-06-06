@@ -18,7 +18,7 @@
       "function": {
         "dadjokeLambda": {
           "deploymentBucketName": "amplify-dadjokesgenerator-dev-171811-deployment",
-          "s3Key": "amplify-builds/dadjokeLambda-463747593469504c3856-build.zip"
+          "s3Key": "amplify-builds/dadjokeLambda-39527137365233775955-build.zip"
         }
       },
       "api": {

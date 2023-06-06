@@ -39,7 +39,7 @@ const JokeGeneratorModal = ({
 	const wiseDevJokeQ =
 		'Why did the software developer go broke?';
 	const wiseDevJokeA =
-		' Because he kept spending all his cache!';
+		'Because he kept spending all his cache!';
 
 	const [blobUrl, setBlobUrl] = useState<string | null>(
 		null
