@@ -59,25 +59,14 @@ async function updateJokeDDBObject() {
 }
 
 exports.handler = async (event) => {
-	console.log(`EVENT: ${JSON.stringify(event)}`);
-	console.log('hello from labmda function');
-
-	// Function: Generate joke image
 	async function getRandomJoke() {
-		// My joke is...
-		let jokeText;
-
-		// Validate response to the api
 		const response = await fetch(apiURL, {
 			headers: {
 				accept: 'application/json',
 			},
 		});
-		var jokeData = await response.json();
-		console.log(jokeData);
-
-		// joke elements
-		jokeText = jokeData.joke;
+		const jokeData = await response.json();
+		const jokeText = jokeData.joke;
 
 		const imagePath = path.join('/tmp', 'joke-card.png');
 		const { svgBuffer, backgroundColor } =

@@ -36,13 +36,6 @@ module.exports = {
 
 		// use this height to approriately put the text in the middle of the svg
 		const textY = (height - 23 - textHeight) / 2;
-		console.log(
-			'height: ' + height,
-			'textHeight: ' + textHeight,
-			'textY: ' + textY
-		);
-
-		console.log(tspanElements);
 
 		//  Add background images for the svg creation
 

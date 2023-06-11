@@ -2,7 +2,6 @@
 
 import styled from 'styled-components';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Box, CircularProgress } from '@mui/material';
 
 export const GradientBackgroundCon = styled.div`
@@ -22,20 +21,6 @@ export const GradientBackgroundCon = styled.div`
 			background-position: 0% 50%;
 		}
 	}
-`;
-
-export const BackgroundImage1 = styled(Image)`
-	position: relative;
-	z-index: 1;
-	margin-left: -10px;
-	margin-top: -10px;
-`;
-
-export const BackgroundImage2 = styled(Image)`
-	position: fixed;
-	z-index: 1;
-	right: -120px;
-	bottom: -10px;
 `;
 
 export const FooterCon = styled.div`
@@ -88,7 +73,7 @@ export const JokeGeneratorInnerCon = styled.div`
 `;
 
 export const JokeGeneratorTitle = styled.div`
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 50px;
 	text-align: center;
 	color: white;
@@ -102,7 +87,7 @@ export const JokeGeneratorTitle = styled.div`
 
 export const JokeGeneratorSubTitle = styled.div`
 	color: white;
-	font-family: 'Caveat', cursive;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 35px;
 	position: relative;
 	width: 100%;
@@ -144,7 +129,7 @@ export const GenerateJokeButton = styled.div`
 
 export const GenerateJokeButtonText = styled.div`
 	color: white;
-	font-family: 'Caveat', cursive;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 35px;
 	left: 50%;
 	top: 50%;
@@ -178,6 +163,9 @@ export const JokeGeneratorModalCon = styled(Box)`
 `;
 
 export const JokeGeneratorModalInnerCon = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);

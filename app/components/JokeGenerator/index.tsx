@@ -66,7 +66,6 @@ const JokeGeneratorModal = ({
 				type: 'image/png',
 			});
 			const blobUrlGenerated = URL.createObjectURL(blob);
-			console.log(blobUrlGenerated);
 			setBlobUrl(blobUrlGenerated);
 
 			return () => {

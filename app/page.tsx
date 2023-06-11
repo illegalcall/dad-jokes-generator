@@ -1,10 +1,7 @@
 'use client';
-
-import Image from 'next/image';
-import styles from './page.module.css';
+import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
 import {
-	BackgroundImage1,
-	BackgroundImage2,
 	FooterCon,
 	FooterLink,
 	GenerateJokeButton,
@@ -16,12 +13,13 @@ import {
 	JokeGeneratorTitle,
 	RedSpan,
 } from './components/JokeGenerator/JokeGeneratorElements';
-import { useEffect, useState } from 'react';
-import { API } from 'aws-amplify';
+
 import {
 	generateAJoke,
 	jokesQueryName,
 } from '@/src/graphql/queries';
+
+import styles from './page.module.css';
 
 // AWS imports
 import { Amplify } from 'aws-amplify';
@@ -48,21 +46,6 @@ interface UpdateJokeInfoData {
 	updatedAt: string;
 }
 
-// type guard for our fetch function
-// function isGraphQLResultForjokesQueryName(
-// 	response: any
-// ): response is GraphQLResult<{
-// 	jokesQueryName: {
-// 		items: [UpdateJokeInfoData];
-// 	};
-// }> {
-// 	return (
-// 		response.data &&
-// 		response.data.jokesQueryName &&
-// 		response.data.jokesQueryName.items
-// 	);
-// }
-
 export default function Home() {
 	const [numberOfJokes, setNumberOfJokes] = useState(0);
 	const [openGenerator, setOpenGenerator] = useState(false);
@@ -82,15 +65,6 @@ export default function Home() {
 						queryName: 'LIVE',
 					},
 				})) as any;
-			console.log('response', response);
-			// setNumberOfJokes();
-
-			// Create type guards
-			// if (!isGraphQLResultForjokesQueryName(response)) {
-			// 	throw new Error(
-			// 		'Unexpected response from API.graphql'
-			// 	);
-			// }
 
 			if (!response.data) {
 				throw new Error('Response data is undefined');
@@ -146,7 +120,6 @@ export default function Home() {
 				responseReStringified.substring(bodyIndex);
 			const bodyArray = bodyAndBase64.split(',');
 			const body = bodyArray[0];
-			console.log(body);
 			setJokeReceived(body);
 
 			// End state:
@@ -168,7 +141,6 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<GradientBackgroundCon>
-				{/* Joke Generator Modal Pop-Up */}
 				<JokeGeneratorModal
 					open={openGenerator}
 					close={handleCloseGenerator}
@@ -189,14 +161,6 @@ export default function Home() {
 							Generate a random dad joke by clicking the
 							button below!
 							<br />
-							Jokes provided by{' '}
-							<FooterLink
-								href='https://icanhazdadjoke.com/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Icanhazdadjoke API
-							</FooterLink>
 						</JokeGeneratorSubTitle>
 
 						<GenerateJokeButton>
@@ -208,19 +172,6 @@ export default function Home() {
 						</GenerateJokeButton>
 					</JokeGeneratorInnerCon>
 				</JokeGeneratorCon>
-
-				<BackgroundImage1
-					src='/cloudy-weather.png'
-					alt='BackgroundImage1'
-					width={400}
-					height={300}
-				/>
-				<BackgroundImage2
-					src='/cloud-and-thunder.png'
-					alt='BackgroundImage1'
-					width={400}
-					height={300}
-				/>
 
 				<FooterCon>
 					<>
@@ -234,7 +185,15 @@ export default function Home() {
 						>
 							Dhruv
 						</FooterLink>
-					</>
+					</>{' '}
+					| provided by{' '}
+					<FooterLink
+						href='https://icanhazdadjoke.com/'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						Icanhazdadjoke API
+					</FooterLink>
 				</FooterCon>
 			</GradientBackgroundCon>
 		</main>
